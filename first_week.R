@@ -1,12 +1,12 @@
-install.packages("readr")  # Sadece ilk kez y??klemek i??in
+install.packages("readr")  # Sadece ilk kez yuklemek icin
 library(readr)
-#Veri Setini ice Aktaral??m
+#Veri Setini ice Aktarai??m
 bike_csv <- read.csv("C:/Users/Casper/Desktop/SeoulBikeData.csv")
-#Veri Yap??s??n?? ??nceleyelim
+#Veri Yapisini ??nceleyelim
 str(bike_csv)
 colnames(bike_csv)
 
-#Kiralanan toplam bisiklet say??s??:
+#Kiralanan toplam bisiklet sayisi:
 total_bikes <-sum(bike_csv$`Rented.Bike.Count`, na.rm = TRUE)
 total_bikes
 
@@ -18,15 +18,15 @@ mean_temp
 max_wind <- max(bike_csv$`Wind.speed..m.s`,na.rm=T)
 max_wind
 
-#Mevsim degiskenini faktor yapal??m.
+#Mevsim degiskenini faktor yapalim.
 fseason <-factor(bike_csv$Seasons)
 levels(fseason)
 table(bike_csv$Seasons) #her bir levelin frekanslar??n?? g??sterir
 
-#Saatleri iceren bir vektor olustural??m
+#Saatleri iceren bir vektor olusturalim
 hours <-(bike_csv$Hour)
 hours
-#Eksik Veri var m???
+#Eksik Veri var mi?
 missing_values <- sum(is.na(bike_csv))
 missing_values
 colSums(is.na(bike_csv))
@@ -34,13 +34,13 @@ colSums(is.na(bike_csv))
 temp_m <- matrix(c(bike_csv$Temperature..C.,bike_csv$Humidity...), ncol=2,byrow=FALSE)
 colnames(temp_m) <- c("temperature","humidity")
 temp_m
-#Olusturdugumuz matrise goz atal??m:
+#Olusturdugumuz matrise goz atalim:
 head(temp_m)
 dim(temp_m)
 nrow(temp_m)
 ncol(temp_m)
 
-#Liste olustural??m
+#Liste olusturalim
 bike_list <- list(data = bike_csv, hours = hours, temp_humidity = temp_m)
 bike_list
 
@@ -55,7 +55,7 @@ glimpse(bike_list)
 #Data Frames
 head(bike_csv, 10)
 
-#Kac tatil gunu olduguna bakal??m:
+#Kac tatil gunu olduguna bakalim:
 fholiday <- factor(bike_csv$Holiday)
 levels(fholiday)
 table(fholiday)

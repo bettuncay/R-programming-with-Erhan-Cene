@@ -1,8 +1,8 @@
 install.packages("readr")  # Sadece ilk kez yuklemek icin
 library(readr)
-#Veri Setini ice Aktarai??m
+#Veri Setini ice Aktaralim
 bike_csv <- read.csv("C:/Users/Casper/Desktop/SeoulBikeData.csv")
-#Veri Yapisini ??nceleyelim
+#Veri Yapisini inceleyelim
 str(bike_csv)
 colnames(bike_csv)
 
